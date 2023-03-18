@@ -13,10 +13,12 @@
       - core
   tasks:
     - include: tasks/core-setup.yml
-    - include: tasks/brave.yml
-    - include: tasks/git-setup.yml
+    - include: tasks/1password-setup.yml
     - include: tasks/zsh-setup.yml
+    - include: tasks/brave.yml
+    - include: tasks/dotfiles.yml
     - include: tasks/node-setup.yml
-    - include: tasks/nvim-setup.yml
     - include: tasks/productivity-tools.yml
+    - include: tasks/git-setup.yml
     - include: tasks/docker-desktop.yml
+    - include: tasks/nvim-setup.yml

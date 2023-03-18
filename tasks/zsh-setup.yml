@@ -1,10 +1,11 @@
 - name: Install ZSH
   become: true
   apt: name=zsh
-  tags: &tags_for_zsh_tasks [ 'install', 'productivity', 'dotfiles', 'zsh' ]
+  tags: &tags_for_zsh_tasks [ 'install', 'zsh' ]
     
 - name: Change shell to zsh
-  shell: chsh -s $(which zsh)
+  become: true
+  shell: chsh -s $(which zsh) {{ user_name }}
   tags: *tags_for_zsh_tasks
 
 - name: Check that the somefile.conf exists

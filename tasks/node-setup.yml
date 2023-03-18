@@ -2,7 +2,7 @@
   shell: curl -L https://get.volta.sh > ~/.volta-installer && chmod +x ~/.volta-installer && ~/.volta-installer
   become: true
   become_method: su
-  become_user: "{{ user_namee }}"
+  become_user: "{{ user_name }}"
   tags: 
     - install
     - node

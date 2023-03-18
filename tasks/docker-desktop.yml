@@ -5,9 +5,8 @@
   tags:
     - docker
 - name: Add Docker official GPG key download
-  get_url:
-    url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-    dest: /usr/share/keyrings/brave-browser-archive-keyring.gpg
+  become: true
+  shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
   tags:
     - docker
 - name: Docker PPA setting
