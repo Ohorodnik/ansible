@@ -1,0 +1,7 @@
+- name: Install Packages
+  become: true
+  apt:
+    name: [ "ripgrep" ]
+  tags:
+    - install
+    - productivity

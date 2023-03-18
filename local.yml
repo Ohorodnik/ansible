@@ -1,0 +1,22 @@
+- hosts: localhost
+  vars:
+    user_name: ohorodnik
+  pre_tasks:
+  - name: Update Apt
+    become: true
+    apt:
+      force_apt_get: true
+      update_cache: true
+      state: present
+    tags:
+      - install
+      - core
+  tasks:
+    - include: tasks/core-setup.yml
+    - include: tasks/brave.yml
+    - include: tasks/git-setup.yml
+    - include: tasks/zsh-setup.yml
+    - include: tasks/node-setup.yml
+    - include: tasks/nvim-setup.yml
+    - include: tasks/productivity-tools.yml
+    - include: tasks/docker-desktop.yml
