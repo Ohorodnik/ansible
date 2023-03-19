@@ -19,7 +19,7 @@
 - name: Install System Packages 3 (the rest)
   become: true
   apt:
-    name: ["curl", "i3", "python3-pip", "ninja-build"]
+    name: ["curl", "i3", "python3-pip", "ninja-build", "policykit-desktop-privileges", "policykit-1-gnome"]
   tags:
     - install
     - core
